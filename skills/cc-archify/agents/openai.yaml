@@ -1,0 +1,4 @@
+interface:
+  display_name: "CC Archify"
+  short_description: "自定义 Archify 图表，完整显示源码类名与路径，保留来源校验"
+  default_prompt: "使用 $cc-archify 绘制带源码依据的架构图，完整显示类名，路径自动换行。"

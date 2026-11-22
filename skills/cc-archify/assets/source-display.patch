@@ -1,0 +1,92 @@
+--- a/assets/template.html
++++ b/assets/template.html
+@@ -1700,7 +1700,9 @@
+       display: block;
+       width: min(22rem, calc(100% - 13rem));
+       max-width: calc(100% - 13rem);
+-      overflow: hidden;
++      max-height: calc(100% - 2rem);
++      overflow-x: hidden;
++      overflow-y: auto;
+       border: 1px solid var(--frontend-stroke);
+       border-radius: 0.85rem;
+       background: var(--toolbar-menu-bg);
+@@ -1853,9 +1855,9 @@
+     html[data-preset="blueprint"] .semantic-passport-evidence { border-radius: 0.18rem; }
+     .semantic-passport-evidence-head {
+       display: flex;
+-      align-items: center;
+-      justify-content: space-between;
+-      gap: 0.55rem;
++      flex-direction: column;
++      align-items: flex-start;
++      gap: 0.3rem;
+       margin-bottom: 0.35rem;
+     }
+     .semantic-passport-evidence-status {
+@@ -1878,12 +1880,12 @@
+     }
+     .semantic-passport-repository {
+       min-width: 0;
+-      overflow: hidden;
++      max-width: 100%;
+       color: var(--text-faint);
+       font-size: 0.5rem;
+       text-decoration: none;
+-      text-overflow: ellipsis;
+-      white-space: nowrap;
++      overflow-wrap: anywhere;
++      white-space: normal;
+     }
+     .semantic-passport-repository:hover,
+     .semantic-passport-repository:focus-visible { color: var(--backend-stroke); }
+@@ -1906,10 +1908,17 @@
+       color: var(--text);
+     }
+     .semantic-passport-source strong {
+-      overflow: hidden;
+       font-size: 0.5625rem;
+-      text-overflow: ellipsis;
+-      white-space: nowrap;
++      overflow-wrap: anywhere;
++      white-space: normal;
++    }
++    .semantic-passport-source-file {
++      grid-column: 1 / -1;
++      color: var(--text);
++      font-size: 0.5625rem;
++      font-weight: 700;
++      overflow-wrap: anywhere;
++      white-space: normal;
+     }
+     .semantic-passport-source code {
+       color: var(--backend-stroke);
+@@ -1918,11 +1927,10 @@
+     }
+     .semantic-passport-source small {
+       grid-column: 1 / -1;
+-      overflow: hidden;
+       color: var(--text-faint);
+       font-size: 0.5rem;
+-      text-overflow: ellipsis;
+-      white-space: nowrap;
++      overflow-wrap: anywhere;
++      white-space: normal;
+     }
+     .relationship-lens-summary {
+       display: block;
+@@ -7832,10 +7840,14 @@
+           location.textContent = source.line
+             ? 'L' + source.line + (source.endLine && source.endLine !== source.line ? '–' + source.endLine : '') + (source.href ? ' ↗' : '')
+             : source.href ? viewerText('viewer.passport.source.openLink') : '';
++          var sourceFile = document.createElement('span');
++          sourceFile.className = 'semantic-passport-source-file';
++          sourceFile.textContent = source.path.split('/').pop() || source.path;
+           var sourcePath = document.createElement('small');
+           sourcePath.textContent = source.path;
+           link.appendChild(name);
+           link.appendChild(location);
++          link.appendChild(sourceFile);
+           link.appendChild(sourcePath);
+           evidenceLinks.appendChild(link);
+         });
