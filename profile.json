@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "updatedAt": "2026-11-22T14:00:40.299Z",
+  "settings": {
+    "theme": "light",
+    "autoSyncAfterChange": false
+  },
+  "customRepo": {
+    "repoUrl": "https://github.com/gabrielsky/my-skills.git",
+    "branch": "main",
+    "skillsSubdir": "skills",
+    "disabledSkills": []
+  },
+  "openSourceRepos": [
+    {
+      "id": "mattpocock-skills",
+      "name": "mattpocock/skills",
+      "repoUrl": "https://github.com/mattpocock/skills.git",
+      "branch": "main",
+      "subdir": "",
+      "enabled": true,
+      "disabledSkills": [],
+      "disableModelInvocationOverrides": {},
+      "addedAt": "2026-11-21T16:28:31.793Z"
+    },
+    {
+      "id": "multica-ai-andrej-karpathy-skills",
+      "name": "multica-ai/andrej-karpathy-skills",
+      "repoUrl": "https://github.com/multica-ai/andrej-karpathy-skills.git",
+      "branch": "main",
+      "subdir": "",
+      "enabled": true,
+      "disabledSkills": [],
+      "disableModelInvocationOverrides": {},
+      "addedAt": "2026-11-22T09:12:41.312Z"
+    },
+    {
+      "id": "cathrynlavery-diagram-design",
+      "name": "cathrynlavery/diagram-design",
+      "repoUrl": "https://github.com/cathrynlavery/diagram-design.git",
+      "branch": "main",
+      "subdir": "",
+      "enabled": true,
+      "disabledSkills": [],
+      "disableModelInvocationOverrides": {
+        "skills/diagram-design": true
+      },
+      "addedAt": "2026-11-22T09:17:31.363Z"
+    }
+  ],
+  "targets": {
+    "antigravity": {
+      "enabled": true,
+      "method": "config_mount"
+    },
+    "gemini": {
+      "enabled": true,
+      "method": "config_mount",
+      "syncSettingsJson": true
+    },
+    "codex": {
+      "enabled": true,
+      "method": "symlink"
+    }
+  }
+}
