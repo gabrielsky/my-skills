@@ -1,8 +1,10 @@
 {
-  "version": 1,
+  "version": 2,
   "custom": {
     "skillsSubdir": "skills",
-    "disabledSkills": []
+    "disabledSkills": [],
+    "pluginsSubdir": "plugins",
+    "disabledPlugins": []
   },
   "openSourceRepos": [
     {
@@ -40,5 +42,19 @@
       },
       "addedAt": "2026-11-22T09:17:31.363Z"
     }
-  ]
+  ],
+  "mcpServers": [],
+  "agentsMd": {
+    "enabled": true,
+    "globalMainEnabled": true,
+    "modularRules": [],
+    "agentOverridesEnabled": {
+      "antigravity": true,
+      "gemini": true,
+      "codex": true,
+      "claude": true
+    }
+  },
+  "pluginRepos": [],
+  "pluginAssignments": {}
 }
